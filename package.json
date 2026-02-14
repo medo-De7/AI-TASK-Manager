@@ -1,0 +1,29 @@
+{
+  "name": "taskapp",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "https://github.com/medo-De7/NEXUS-AI-PROJECT-MANAGER-AGENT-#readme",
+  "bugs": {
+    "url": "https://github.com/medo-De7/NEXUS-AI-PROJECT-MANAGER-AGENT-/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medo-De7/NEXUS-AI-PROJECT-MANAGER-AGENT-.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server/server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.95.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "fs": "^0.0.1-security",
+    "nodemon": "^3.1.11",
+    "path": "^0.12.7"
+  }
+}

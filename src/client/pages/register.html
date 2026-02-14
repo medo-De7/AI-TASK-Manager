@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* تصفير الهوامش عشان الصورة تقفل كل الحدود */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* يمنع السكرول ويقفل الشاشة */
+        }
+
+        .main-container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* صورة خلفية جبلية احترافية تغطي كل الشاشة */
+            background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+        }
+
+        /* التأثير الزجاجي للكارت */
+        .register-card {
+            width: 420px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            color: white;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 45px 12px 15px; /* مساحة للأيقونة */
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* الأيقونات جهة اليمين لأننا بنستخدم RTL */
+        .input-group i {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 30px;
+            background: #fff;
+            color: #2c3e50;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .register-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .login-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .login-link a:hover {
+            border-bottom: 1px solid white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="register-card">
+            <h2>Register</h2>
+            
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Username" required>
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" placeholder="Email ID" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" placeholder="Confirm Password" required>
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+
+                <button type="submit" class="register-btn">Register</button>
+
+                <div class="login-link">
+                    Already have an account? <a href="login">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

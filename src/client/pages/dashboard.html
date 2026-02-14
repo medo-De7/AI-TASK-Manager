@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise AI Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ri-flashlight-fill"></i>
+                <span>Quantum AI</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <p class="group-title">Main</p>
+                    <a href="#" class="nav-link active"><i class="ri-dashboard-line"></i> Dashboard</a>
+                    <a href="#" class="nav-link"><i class="ri-bar-chart-box-line"></i> Analytics</a>
+                    <a href="#" class="nav-link"><i class="ri-user-settings-line"></i> CRM</a>
+                </div>
+
+                <div class="nav-group">
+                    <p class="group-title">Assets</p>
+                    <a href="#" class="nav-link"><i class="ri-folder-6-line"></i> Projects</a>
+                    <a href="#" class="nav-link"><i class="ri-database-2-line"></i> Database</a>
+                    <a href="#" class="nav-link"><i class="ri-wallet-3-line"></i> Revenue</a>
+                </div>
+
+                <div class="nav-group">
+                    <p class="group-title">Support</p>
+                    <a href="#" class="nav-link"><i class="ri-settings-3-line"></i> Settings</a>
+                    <a href="#" class="nav-link"><i class="ri-questionnaire-line"></i> Help Center</a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff" alt="User">
+                    <div class="user-info">
+                        <span class="name">Mohamed A.</span>
+                        <span class="role">Lead Developer</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search data, reports, users...">
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon"><i class="ri-notification-3-line"></i><span class="badge"></span></button>
+                    <button class="btn-primary"><i class="ri-add-line"></i> Create Report</button>
+                </div>
+            </header>
+
+            <section class="content-body">
+                <div class="welcome-banner">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here is what's happening with your projects today.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="icon-box blue"><i class="ri-user-voice-line"></i></span>
+                            <span class="trend up">+12.5%</span>
+                        </div>
+                        <h3>24,512</h3>
+                        <p>Total Active Users</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="icon-box purple"><i class="ri-cpu-line"></i></span>
+                            <span class="trend up">+8.2%</span>
+                        </div>
+                        <h3>85.4%</h3>
+                        <p>System Performance</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="icon-box green"><i class="ri-money-dollar-circle-line"></i></span>
+                            <span class="trend down">-2.1%</span>
+                        </div>
+                        <h3>$142,209</h3>
+                        <p>Monthly Revenue</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="icon-box orange"><i class="ri-time-line"></i></span>
+                            <span class="trend up">+1.4%</span>
+                        </div>
+                        <h3>1,204</h3>
+                        <p>Hours Tracked</p>
+                    </div>
+                </div>
+
+                <div class="data-layout">
+                    <div class="table-container">
+                        <div class="table-header">
+                            <h2>Recent Activity</h2>
+                            <button class="btn-secondary">View All</button>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Assignee</th>
+                                    <th>Status</th>
+                                    <th>Progress</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AI Model Training</td>
+                                    <td><img src="https://i.pravatar.cc/30?u=1" class="avatar"> Sarah K.</td>
+                                    <td><span class="tag active">Active</span></td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                                    </td>
+                                    <td><i class="ri-more-fill"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Dashboard Redesign</td>
+                                    <td><img src="https://i.pravatar.cc/30?u=2" class="avatar"> Alex M.</td>
+                                    <td><span class="tag pending">Pending</span></td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress" style="width: 40%;"></div></div>
+                                    </td>
+                                    <td><i class="ri-more-fill"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>API Integration</td>
+                                    <td><img src="https://i.pravatar.cc/30?u=3" class="avatar"> John D.</td>
+                                    <td><span class="tag completed">Completed</span></td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                                    </td>
+                                    <td><i class="ri-more-fill"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Database Cleanup</td>
+                                    <td><img src="https://i.pravatar.cc/30?u=4" class="avatar"> Emily R.</td>
+                                    <td><span class="tag active">Active</span></td>
+                                    <td>
+                                        <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
+                                    </td>
+                                    <td><i class="ri-more-fill"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="chart-placeholder">
+                        <div class="table-header">
+                            <h2>Project Distribution</h2>
+                        </div>
+                        <div class="radial-chart-mockup">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage">80%</text>
+                            </svg>
+                        </div>
+                        <ul class="legend">
+                            <li><span class="dot blue"></span> Completed</li>
+                            <li><span class="dot grey"></span> Ongoing</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+<style>
+    /* --- CSS Reset & Variables --- */
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-main: #0f172a;
+    --bg-sidebar: #1e293b;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* --- Layout --- */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    position: fixed;
+    height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 40px;
+}
+
+.nav-group {
+    margin-bottom: 30px;
+}
+
+.group-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    padding-left: 12px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    text-decoration: none;
+    color: var(--text-muted);
+    border-radius: 8px;
+    transition: 0.2s;
+    margin-bottom: 4px;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: rgba(99, 102, 241, 0.1);
+    color: var(--primary);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.user-info .name {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.user-info .role {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* --- Main Content --- */
+.main-content {
+    flex: 1;
+    margin-left: 260px;
+    padding: 30px;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.search-bar {
+    position: relative;
+    width: 400px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-bar input {
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 12px 12px 12px 45px;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* --- Components --- */
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { background: var(--primary-hover); }
+
+.stat-card {
+    background: var(--bg-card);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.icon-box.blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.icon-box.purple { background: rgba(168, 85, 247, 0.1); color: #a855f7; }
+.icon-box.green { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+.icon-box.orange { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+.trend { font-size: 12px; font-weight: 600; }
+.trend.up { color: var(--success); }
+.trend.down { color: var(--danger); }
+
+/* --- Data Table --- */
+.data-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.table-container, .chart-placeholder {
+    background: var(--bg-card);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    text-align: left;
+    color: var(--text-muted);
+    font-size: 13px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.tag {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.tag.active { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+.tag.pending { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.tag.completed { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+
+.progress-bar {
+    width: 100px;
+    height: 6px;
+    background: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary);
+}
+
+/* --- Responsive CSS --- */
+@media (max-width: 1024px) {
+    .sidebar { width: 80px; padding: 15px; }
+    .logo span, .nav-link span, .group-title, .user-info, .sidebar-footer { display: none; }
+    .main-content { margin-left: 80px; }
+    .data-layout { grid-template-columns: 1fr; }
+}
+</style>
+</html>
