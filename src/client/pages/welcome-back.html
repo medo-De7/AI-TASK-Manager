@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* إلغاء أي هوامش افتراضية من المتصفح */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* جعل الصفحة تأخذ طول وعرض الشاشة بالكامل */
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* لمنع ظهور شريط التمرير */
+        }
+
+        /* حاوية الخلفية الرئيسية */
+        .hero-wrapper {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            /* الصورة ستغطي كامل الشاشة */
+            background: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+        }
+
+        /* الطبقة الزرقاء الشفافة فوق الصورة بالكامل */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(44, 100, 156, 0.8), rgba(24, 55, 87, 0.6));
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        /* شريط التنقل */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 80px; /* مسافة من الحواف */
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* المحتوى النصي في المنتصف */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .content h1 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            letter-spacing: 15px;
+            text-transform: uppercase;
+            font-weight: 300; /* لجعل الخط أنيق ورقيق */
+        }
+
+        .user-greeting {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .user-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .last-login {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+        }
+
+        .content p {
+            max-width: 700px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* زر Get Started */
+        .btn {
+            padding: 15px 45px;
+            background-color: white;
+            color: #183757;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+            background-color: #f8f8f8;
+        }
+
+        .btn-logout {
+            padding: 15px 45px;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.4s ease;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .btn-logout:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* لجعل الموقع متجاوب مع الموبايل */
+        @media (max-width: 768px) {
+            nav { padding: 20px; flex-direction: column; gap: 20px; }
+            .content h1 { font-size: 3rem; letter-spacing: 5px; }
+            .nav-links { gap: 15px; }
+            .user-greeting { font-size: 1.2rem; }
+            .user-name { font-size: 1.5rem; }
+            .button-group { flex-direction: column; gap: 10px; }
+            .btn, .btn-logout { width: 80%; margin: 5px auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-wrapper">
+        <div class="overlay">
+            
+            <nav>
+                <div class="logo">TrioTasks</div>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="content">
+                <h1>WELCOME BACK</h1>
+                <div class="user-greeting">Hello,</div>
+                <div class="user-name" id="userName">User</div>
+                <div class="last-login">Last login: <span id="lastLogin">Today</span></div>
+                <p>
+                    Great to see you again! Your dashboard is ready with all your tasks and updates. 
+                    Let's get back to being productive.
+                </p>
+                <div class="button-group">
+                    <button class="btn" onclick="goToDashboard()">Go to Dashboard</button>
+                    <button class="btn-logout" onclick="logout()">Sign Out</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // تعيين اسم المستخدم (يمكن استدعاؤه من الخادم)
+        function loadUserInfo() {
+            const userName = localStorage.getItem('userName') || 'User';
+            document.getElementById('userName').textContent = userName;
+            
+            const lastLogin = localStorage.getItem('lastLogin') || 'Today';
+            document.getElementById('lastLogin').textContent = lastLogin;
+        }
+
+        function goToDashboard() {
+            window.location.href = 'dashboard.html';
+        }
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = 'login.html';
+        }
+
+        // تحميل معلومات المستخدم عند فتح الصفحة
+        document.addEventListener('DOMContentLoaded', loadUserInfo);
+    </script>
+</body>
+</html>
