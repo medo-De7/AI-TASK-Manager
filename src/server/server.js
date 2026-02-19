@@ -8,6 +8,9 @@ const path = require('path');
 app.listen(port,()=>{
     console.log(`Server is running on port ${port}`);
 })
+
+app.use(cors());
+app.use(express.json());
 // Serve client static files (styles, images, pages) if referenced relatively
 // Serve client files so page-relative asset paths work (styles, pages, images)
 app.use(express.static(path.join(__dirname, '../client')));
@@ -30,7 +33,18 @@ app.get('/dashboard', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages/dashboard.html'));
 });
 
+app.post('/submitudata', (req, res) => {
+    let userdata = {
+        "name": req.body.name,
+        "email": req.body.email,
+        "password": req.body.password
+    }
+    console.log(userdata);
+    res.send('Data received');
+});
+
 // Simple 404 for other routes
 app.use((req, res) => {
     res.status(404).send('Not found. Available pages: /, /login, /register, /dashboard');
 });
+

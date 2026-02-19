@@ -127,33 +127,89 @@
             
             <form>
                 <div class="input-group">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" placeholder="Username" id="user" required>
                     <i class="fas fa-user"></i>
                 </div>
 
                 <div class="input-group">
-                    <input type="email" placeholder="Email ID" required>
+                    <input type="email" placeholder="Email ID" id="email" required>
                     <i class="fas fa-envelope"></i>
                 </div>
                 
                 <div class="input-group">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Password" id="pass" required>
                     <i class="fas fa-lock"></i>
                 </div>
 
                 <div class="input-group">
-                    <input type="password" placeholder="Confirm Password" required>
+                    <input type="password" placeholder="Confirm Password" id="confpass" required>
                     <i class="fas fa-shield-alt"></i>
                 </div>
-
-                <button type="submit" class="register-btn">Register</button>
 
                 <div class="login-link">
                     Already have an account? <a href="login">Login</a>
                 </div>
             </form>
+            <button type="submit" class="register-btn" id="submit">Register</button>
         </div>
     </div>
+<script>
+    let errmsg = String.raw`Please Ensure You Write The Registeration Dependencies Correctly`
+    const submitBtn = document.getElementById('submit');
+    submitBtn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        if(checkDep()){
+            sendReq()
+        }
+        else if(checkDep() == false){
+            alert(errmsg)
+            window.location.reload()
+        }
+    })
 
+    function sendReq(){
+        const user = document.getElementById('user'); const UserTXT = document.getElementById('user').value;
+        const email = document.getElementById('email'); const EmailTXT = document.getElementById('email').value;
+        const pass = document.getElementById('pass'); const PassTXT = document.getElementById('pass').value;
+        const confpass = document.getElementById('confpass'); const ConfPassTXT = document.getElementById('confpass').value;
+
+        fetch("http://localhost:3000/submitudata", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: UserTXT,
+                email: EmailTXT,
+                password: PassTXT
+            })
+        }).then(res => res.text()).then(data => {
+            console.log(data);
+            alert("Registration successful!");
+        }).catch(err => {
+            console.error("Error:", err);
+            alert("An error occurred during registration. Please try again.");
+        })
+    }
+
+    function checkDep(){
+        const user = document.getElementById('user'); const UserTXT = document.getElementById('user').value;
+        const email = document.getElementById('email'); const EmailTXT = document.getElementById('email').value;
+        const pass = document.getElementById('pass'); const PassTXT = document.getElementById('pass').value;
+        const confpass = document.getElementById('confpass'); const ConfPassTXT = document.getElementById('confpass').value;
+
+        if(UserTXT === "" || EmailTXT === "" || PassTXT === "" || ConfPassTXT === ""){
+            errmsg = `Please Fill All Fields`;
+            return false;
+        }
+
+        if(PassTXT !== ConfPassTXT){
+            errmsg = "Passwords do not match.";
+            return false;
+        }
+
+        return true; // All checks passed
+    }
+</script>
 </body>
 </html>
